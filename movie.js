@@ -20,11 +20,13 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
         }
 
         const input = document.getElementById('search-input');
-        const btn = document.getElementById('search-btn');
+        // const btn = document.getElementById('search-btn'); // 버튼은 기본적으로 type="submit"
+        const enter = document.querySelector('.enter');
         
-        btn.addEventListener('click', () => {
+        enter.addEventListener('submit', (e) => {
+            e.preventDefault();
             const keyword = input.value;
-            const filteredMovies = movieFilter(movies, keyword);
+            const filteredMovies = movieFilter(data.results, keyword);
             getMovies(filteredMovies);
         });
 
@@ -37,7 +39,7 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
         // 카드를 가지고 오기 위한 변수
         const getMovies = (movies) => {
 
-            cardList.innerHTML = ''; // ??
+            cardList.innerHTML = '';
 
             movies.forEach(movie => {
                 const { backdrop_path, id, title, overview, vote_average } = movie;
