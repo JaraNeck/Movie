@@ -20,7 +20,13 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
         }
 
         const input = document.getElementById('search-input');
-        // const btn = document.getElementById('search-btn');
+        const btn = document.getElementById('search-btn');
+        
+        btn.addEventListener('click', () => {
+            const keyword = input.value;
+            const filteredMovies = movieFilter(movies, keyword);
+            getMovies(filteredMovies);
+        });
 
         input.addEventListener("keyup", (e) => {
             const keyword = e.target.value;
