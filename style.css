@@ -1,0 +1,52 @@
+body {
+    background-color: #e6fffd;
+    margin: 0;
+}
+
+
+.top {
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border-bottom: 1px solid;
+}
+
+.search input {
+    margin-left: 20px;
+}
+
+.search button {
+    margin-left: 20px;
+}
+
+.card-list {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.movie-card {
+    background-color: bisque;
+    height: ;
+    width: 270px;
+    padding: 20px;
+    margin: 20px;
+    justify-self: center;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 2.2em rgba(25, 0, 58, 0.15);
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 10px;
+}
